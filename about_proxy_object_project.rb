@@ -36,7 +36,7 @@ class Proxy
       @messages.push method_name
       @object.send method_name, *args, 
     else
-      super(method_name, *args, &block)
+      super method_name, *args, &block
     end
   end
 
