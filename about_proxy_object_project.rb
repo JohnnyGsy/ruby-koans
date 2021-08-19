@@ -24,13 +24,7 @@ class Proxy
   def number_of_times_called method_name
     @messages.count method_name
   end
-
-  def number_of_times_called method_name
-    @messages.count method_name
-  end
-
-
-
+  
   def method_missing method_name, *args, &block
     if @object.respond_to? method_name
       @messages.push method_name
@@ -39,10 +33,7 @@ class Proxy
       super method_name, *args, &block
     end
   end
-
   
-  
-
 end
 
 # The proxy object should pass the following Koan:
